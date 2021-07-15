@@ -53,10 +53,20 @@ public class Game {
             }else{
 
             }
+            if(turncnt>=100){
+                System.out.println("敵艦隊に大規模な応援がやってきてしまった...");
+                break;
+            }
         }
-        System.out.println(":::::::::::::::::::::::::::::::::::::::");
-        System.out.printf(":::我が艦隊は敵艦全てを撃沈させ、完璧に勝利した！！:::\n:::%dターンでの勝利！！:::\n",turncnt);
-        System.out.println(":::::::::::::::::::::::::::::::::::::::");
+        if(turncnt>=100){
+            System.out.println(":::::::::::::::::::::::::::::::::::::::");
+            System.out.println(":::我が艦隊は敗北し壊滅状態となってしまった。。。:::\n{BAD  END}");
+            System.out.println(":::::::::::::::::::::::::::::::::::::::");
+        }else{
+            System.out.println(":::::::::::::::::::::::::::::::::::::::");
+            System.out.printf(":::我が艦隊は敵艦全てを撃沈させ、完璧に勝利した！！:::\n:::%dターンでの勝利！！:::\n",turncnt);
+            System.out.println(":::::::::::::::::::::::::::::::::::::::");
+        }
     }
 
     public static void setXY(int[] shipx,int[] shipy){
