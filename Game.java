@@ -67,6 +67,7 @@ public class Game {
             System.out.printf(":::我が艦隊は敵艦全てを撃沈させ、完璧に勝利した！！:::\n:::%dターンでの勝利！！:::\n",turncnt);
             System.out.println(":::::::::::::::::::::::::::::::::::::::");
         }
+        sc.close();
     }
 
     public static void setXY(int[] shipx,int[] shipy){
@@ -126,7 +127,7 @@ public class Game {
             if(shipdmg == 0){
                 System.out.println("命中せず");
             }else if(shipdmg == 1){
-                System.out.println("波高し!\n近くにを航行しているようだ...");
+                System.out.println("波高し!\n近くを航行しているようだ...");
             }else{
                 ship[ship_no-1].shipDmg(mode);  //ダメージを入力し、撃沈したかの判定
             }

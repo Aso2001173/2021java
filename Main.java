@@ -8,6 +8,7 @@ public class Main {
         System.out.println("難易度を選択してください\n1,簡単\n2,難しめ");
         int mode = Game.setMode(sc);
         Game.newGame(mode);
+        sc.close();
     }
 
 }
