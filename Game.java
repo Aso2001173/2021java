@@ -127,7 +127,8 @@ public class Game {
             if(shipdmg == 0){
                 System.out.println("命中せず");
             }else if(shipdmg == 1){
-                System.out.println("波高し!\n近くを航行しているようだ...");
+                String shipname = Ship.nearShip(bomx,bomy);
+                System.out.printf("波高し!\n戦艦%sが近くを航行しているようだ...",shipname);
             }else{
                 ship[ship_no-1].shipDmg(mode);  //ダメージを入力し、撃沈したかの判定
             }

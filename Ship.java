@@ -90,6 +90,25 @@ public class Ship {
             return false;
         }
     }
+    public static String nearShip(int bomx,int bomy){
+        int[] x = new int[2];
+        int[] y = new int[2];
+        x[0] = bomx+1 > 4? 4:bomx+1;
+        y[0] = bomy+1 > 4? 4:bomy+1;
+        x[1] = bomx-1 < 0? 0:bomx-1;
+        y[1] = bomy-1 < 0? 0:bomy-1;
+        if(seaMap[bomy][x[0]] != 0){
+            return shipname[seaMap[bomy][x[0]]%10];
+        }else if(seaMap[bomy][x[1]] != 0){
+            return shipname[seaMap[bomy][x[1]]%10];
+        }else if(seaMap[y[0]][bomx] != 0){
+            return shipname[seaMap[y[0]][bomx]%10];
+        }else if(seaMap[y[1]][bomx] != 0){
+            return shipname[seaMap[y[1]][bomx]%10];
+        }else{
+            return "none";
+        }
+    }
     
     public void shipDmg(int mode){ //ダメージの表示など
         String[] dmgname = {"沈没した","航行困難な","航行可能な"};
