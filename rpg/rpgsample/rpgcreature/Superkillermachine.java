@@ -11,7 +11,7 @@ public class Superkillermachine extends Monster{
     private final static int MAX_HP = 100;
     private final static int GOLD = 5000;
     private final static int DEF = 20; 
-    private final static int ATTACK_MAJINGIRI=10;
+    private final static int ATTACK_MAJINGIRI=150;
     private final static int ATTACK_MAJINGIRI_DAMAGE=100;
     /**
      * スライムクラスのコンストラクタ

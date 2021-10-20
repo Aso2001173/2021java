@@ -60,15 +60,15 @@ public class Braver extends Creature{
     }
     //装備の入手
     public void getSArmor(){
-        DEF = 60;
+        pulsDef(60);
         System.out.println("\n宝箱から「伝説の鎧」が出てきた。防御力+60\n");
     }
     public void getAArmor(){
-        DEF = 35;
-        System.out.println("\n宝箱から「堅そうな鎧」が出てきた。防御力+35\n");
+        pulsDef(35);
+        System.out.println("\n宝箱から「ジパングの鎧」が出てきた。防御力+35\n");
     }
     public void getBArmor(){
-        DEF = 20;
+        pulsDef(20);
         System.out.println("\n宝箱から「上質な鎧」が出てきた。防御力+20\n");
     }
 }

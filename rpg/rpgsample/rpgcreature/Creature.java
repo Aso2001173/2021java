@@ -89,4 +89,9 @@ public abstract class Creature {
     public int getDef(){
         return def;
     }
+
+    //防御力変更の場合の担当のシルバーセンターのおじさん
+    public void pulsDef(int pulsdef){
+        def += pulsdef;
+    }
 }

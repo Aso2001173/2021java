@@ -16,9 +16,9 @@ public class RPGMain {
     private final int MONSTER_RANDOM=4;//何体のモンスターから選ぶか
     private final int COMMAND_BATTLE=1;//攻撃コマンド
     private final int COMMAND_RECOVERY=2;//回復コマンド
-    private final int ARMOR_RATE = 3;
+    private final int ARMOR_RATE = 6;
     private int get_gold=0;
-    protected int turn_count = 1;//ターン数
+    private int turn_count = 1;//ターン数
 
     private Braver braver;
     private Monster[] monsters;
@@ -54,16 +54,33 @@ public class RPGMain {
             
             //現在の状態を表示
             dispStatus();
-            //入力されたコマンドを取得
-            int command = sc.nextInt();
+                                    //入力されたコマンドを取得
+            //コマンドの変数を定義
+            int command = 0;
+
+            //1か2の数字が入力されるまで
             while(true){
-                if(command == COMMAND_BATTLE || command == COMMAND_RECOVERY){
+                /*if(command == COMMAND_BATTLE || command == COMMAND_RECOVERY){
                     break;
                 }else{
                     System.out.println("1または2を入力して下さい");
                 command = sc.nextInt();
+                }*/
+                
+                try {
+                    command= Integer.parseInt(sc.nextLine());
+                } catch (NumberFormatException e) {
+                    command = 9999;
+                }
+
+                if(command == COMMAND_BATTLE || command == COMMAND_RECOVERY){
+                    break;
+                }else{
+                    System.out.println("▲▼▲▼▲ 入力エラー ▲▼▲▼▲\n半角の1または2を入力して下さい");
                 }
             }
+
+
             if( command == COMMAND_BATTLE ){
                 //たたかう
                 System.out.printf("====%dターン目====\n",turn_count);
@@ -136,10 +153,10 @@ public class RPGMain {
                     case 0:
                         braver.getSArmor();
                         break;
-                    case 1:
+                    case 1,2:
                         braver.getAArmor();
                         break;
-                    case 2:
+                    default:
                         braver.getBArmor();
                         break;
                 }
